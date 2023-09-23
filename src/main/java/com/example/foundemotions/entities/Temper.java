@@ -1,17 +1,25 @@
 package com.example.foundemotions.entities;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
-
+@Entity
+@Table(name = "temper")
 public class Temper {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "name",length = 30,nullable = false)
     private String name;
+    @Column(name = "description",length = 250,nullable = false)
     private String description;
-    private Gender genderid;
+    @ManyToMany
+    @JoinColumn(name = "genderid")
+    private List<Gender> genderid;
     public Temper() {
     }
 
-    public Temper(int id, String name, String description, Gender genderid) {
+    public Temper(int id, String name, String description, List<Gender> genderid) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,11 +50,11 @@ public class Temper {
         this.description = description;
     }
 
-    public Gender getGenderid() {
+    public List<Gender> getGenderid() {
         return genderid;
     }
 
-    public void setGenderid(Gender genderid) {
+    public void setGenderid(List<Gender> genderid) {
         this.genderid = genderid;
     }
 }
