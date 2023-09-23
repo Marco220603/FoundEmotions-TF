@@ -7,6 +7,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/temper")
 public class TemperController {
@@ -25,6 +28,21 @@ public class TemperController {
         Temper t = m.map(dto,Temper.class);
         tS.insert(t);
     }
+    @DeleteMapping
+    private void delete(@PathVariable("id") Integer id){tS.delete(id);}
+
+    @GetMapping
+    public List<TemperDTO> list(){
+        return tS.list().stream().map(x->{
+            ModelMapper m = new ModelMapper();
+            return m.map(x,TemperDTO.class);
+        }).collect(Collectors.toList());
+    }
+
+    
+
+
+
 
 
 
