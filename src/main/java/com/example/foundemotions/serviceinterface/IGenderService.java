@@ -1,6 +1,5 @@
 package com.example.foundemotions.serviceinterface;
 
-import com.example.foundemotions.entities.Artist;
 import com.example.foundemotions.entities.Gender;
 
 import java.util.List;
