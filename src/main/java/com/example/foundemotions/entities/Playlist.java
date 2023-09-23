@@ -19,7 +19,7 @@ public class Playlist {
 
 
     @ManyToOne
-    @JoinColumn(name="id_user",referencedColumnName = "id_user")
+    @JoinColumn(name="user_id",referencedColumnName = "user_id")
     private User iduser;
 
     @ManyToOne
