@@ -12,14 +12,15 @@ public class Gender{
      private int id ;
 
     @Column(name="name",length = 40, nullable = false)
-    private String name;
+    private String nameGender;
 
     public Gender() {
+
     }
 
     public Gender(int id, String name) {
         this.id = id;
-        this.name = name;
+        this.nameGender = name;
     }
 
     public int getId() {
@@ -31,10 +32,10 @@ public class Gender{
     }
 
     public String getName() {
-        return name;
+        return nameGender;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameGender= name;
     }
 }

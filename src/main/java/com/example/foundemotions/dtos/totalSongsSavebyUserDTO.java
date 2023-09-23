@@ -2,7 +2,9 @@ package com.example.foundemotions.dtos;
 
 public class totalSongsSavebyUserDTO {
     private String name;
-    private int total;
+    private int totalcanciones;
+
+    private int totalcuestionario;
 
     public String getName() {
         return name;
@@ -12,11 +14,19 @@ public class totalSongsSavebyUserDTO {
         this.name = name;
     }
 
-    public int getTotal() {
-        return total;
+    public int getTotalcanciones() {
+        return totalcanciones;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
+    public void setTotalcanciones(int totalcanciones) {
+        this.totalcanciones = totalcanciones;
+    }
+
+    public int getTotalcuestionario() {
+        return totalcuestionario;
+    }
+
+    public void setTotalcuestionario(int totalcuestionario) {
+        this.totalcuestionario = totalcuestionario;
     }
 }

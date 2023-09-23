@@ -32,7 +32,7 @@ public class ArtistController {
         Artist t = m.map(dto,Artist.class);
         aS.insert(t);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){aS.delete(id);}
 
     @GetMapping

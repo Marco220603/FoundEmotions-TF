@@ -2,7 +2,6 @@ package com.example.foundemotions.controllers;
 
 
 import com.example.foundemotions.dtos.GenderDTO;
-import com.example.foundemotions.dtos.PlaylistDTO;
 import com.example.foundemotions.entities.Gender;
 import com.example.foundemotions.serviceinterface.IGenderService;
 import org.modelmapper.ModelMapper;
@@ -14,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Gender")
+@RequestMapping("/gender")
 public class GenderController {
 
     @Autowired
@@ -37,6 +36,7 @@ public class GenderController {
     private void delete(@PathVariable("id") Integer id){gS.delete(id);}
 
     @GetMapping
+
     public List<GenderDTO> list(){
         return gS.list().stream().map(x->{
             ModelMapper m = new ModelMapper();
