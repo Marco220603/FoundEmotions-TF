@@ -1,5 +1,8 @@
 package com.example.foundemotions.entities;
 
+import javax.persistence.Entity;
+
+
 public class Temper {
     private int id;
     private String name;
