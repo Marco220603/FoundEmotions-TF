@@ -1,7 +1,6 @@
 package com.example.foundemotions.serviceinterface;
 
 import com.example.foundemotions.entities.Questions;
-import com.example.foundemotions.entities.Temper;
 
 import java.util.List;
 

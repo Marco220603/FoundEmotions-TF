@@ -1,7 +1,6 @@
 package com.example.foundemotions.serviceimplements;
 
 import com.example.foundemotions.entities.Songs;
-import com.example.foundemotions.entities.Temper;
 import com.example.foundemotions.repositories.ISongsRespository;
 import com.example.foundemotions.serviceinterface.ISongsService;
 import org.springframework.beans.factory.annotation.Autowired;

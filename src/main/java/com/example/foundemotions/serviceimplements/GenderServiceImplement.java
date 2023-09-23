@@ -1,6 +1,6 @@
 package com.example.foundemotions.serviceimplements;
 
-import com.example.foundemotions.entities.Artist;
+
 import com.example.foundemotions.entities.Gender;
 import com.example.foundemotions.repositories.IGenderRepository;
 import com.example.foundemotions.serviceinterface.IGenderService;
