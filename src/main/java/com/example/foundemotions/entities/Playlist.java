@@ -2,13 +2,14 @@ package com.example.foundemotions.entities;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Playlist")
 public class Playlist {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "name",length = 35,nullable = false)
@@ -29,11 +30,11 @@ public class Playlist {
     public Playlist() {
     }
 
-    public Playlist(int id, String name, String description, User iduser, Songs idsongs) {
+    public Playlist(int id, String name, String description, User user, Songs idsongs) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.user = iduser;
+        this.user = user;
         this.idsongs = idsongs;
     }
 
@@ -61,12 +62,12 @@ public class Playlist {
         this.description = description;
     }
 
-    public User getIduser() {
+    public User getUser() {
         return user;
     }
 
-    public void setIduser(User iduser) {
-        this.user = iduser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Songs getIdsongs() {

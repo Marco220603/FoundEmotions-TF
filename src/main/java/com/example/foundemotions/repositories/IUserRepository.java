@@ -17,7 +17,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
     @Transactional
     @Modifying
-    @Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
-    public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
+    @Query(value = "insert into roles (rol, userid) VALUES (:rol, :userid)", nativeQuery = true)
+    public void insRol(@Param("rol") String authority, @Param("userid") Long userid);
 
 }

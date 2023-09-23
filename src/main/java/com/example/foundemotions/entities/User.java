@@ -18,7 +18,7 @@ public class User implements Serializable {
     private String password;
     private Boolean enable;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userid")
     private List<Roles> roles;
 
     public long getId() {
@@ -68,4 +68,6 @@ public class User implements Serializable {
     public void setRoles(List<Roles> roles) {
         this.roles = roles;
     }
+
+
 }

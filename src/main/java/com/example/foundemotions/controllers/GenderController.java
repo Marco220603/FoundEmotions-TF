@@ -7,6 +7,7 @@ import com.example.foundemotions.entities.Gender;
 import com.example.foundemotions.serviceinterface.IGenderService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,6 +45,7 @@ public class GenderController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public GenderDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m=new ModelMapper();
         GenderDTO dto=m.map(gS.listId(id),GenderDTO.class);
