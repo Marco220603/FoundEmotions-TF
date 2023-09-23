@@ -39,7 +39,14 @@ public class TemperController {
         }).collect(Collectors.toList());
     }
 
-    
+    @GetMapping("/{id}")
+    public TemperDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        TemperDTO dto=m.map(tS.listId(id),TemperDTO.class);
+        return dto;
+    }
+
+
 
 
 
