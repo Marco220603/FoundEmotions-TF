@@ -31,4 +31,11 @@ public class PlaylistServiceImplement implements IPlaylistService {
     public Playlist listId(int idPlaylist) {
         return pR.findById(idPlaylist).orElse(new Playlist());
     }
+
+    @Override
+    public List<String[]> totalSongsSavebyUser() {
+        return pR.totalSongsSavebyUser();
+    }
+
+
 }

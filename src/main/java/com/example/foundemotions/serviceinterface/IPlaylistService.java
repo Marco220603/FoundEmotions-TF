@@ -9,4 +9,5 @@ public interface IPlaylistService {
     public List<Playlist> list();
     public void delete(int idPlaylist);
     public Playlist listId(int idPlaylist);
+    public List<String[]> totalSongsSavebyUser();
 }

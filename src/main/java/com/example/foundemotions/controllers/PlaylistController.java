@@ -2,12 +2,14 @@ package com.example.foundemotions.controllers;
 
 import com.example.foundemotions.dtos.PlaylistDTO;
 import com.example.foundemotions.dtos.SongsDTO;
+import com.example.foundemotions.dtos.totalSongsSavebyUserDTO;
 import com.example.foundemotions.entities.Playlist;
 import com.example.foundemotions.serviceinterface.IPlaylistService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,6 +53,20 @@ public class PlaylistController {
             ModelMapper m = new ModelMapper();
             return m.map(x,PlaylistDTO.class);
         }).collect(Collectors.toList());
+    }
+
+    @GetMapping("/cancionesagregadasporUser")
+    public List<totalSongsSavebyUserDTO> cancionesagregasbyUser(){
+        List<String[]>totalSongsSavebyUser = pS.totalSongsSavebyUser();
+        List<totalSongsSavebyUserDTO> totalSongsSavebyUserDTOS = new ArrayList<>();
+        for (String[] data: totalSongsSavebyUser){
+            totalSongsSavebyUserDTO dto = new totalSongsSavebyUserDTO();
+            dto.setName(data[0]);
+            dto.setTotal(Integer.parseInt(data[1]));
+            totalSongsSavebyUserDTOS.add(dto);
+        }
+
+        return totalSongsSavebyUserDTOS;
     }
 
 

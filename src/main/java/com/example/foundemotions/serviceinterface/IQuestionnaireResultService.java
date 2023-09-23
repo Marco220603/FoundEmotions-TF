@@ -13,4 +13,6 @@ public interface IQuestionnaireResultService {
     public QuestionnaireResult listId(int idquestionnaireresult);
 
     List<QuestionnaireResult> list();
+
+    public List<String[]> ResultadoUsuarioCuestionario();
 }

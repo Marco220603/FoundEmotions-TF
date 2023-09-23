@@ -31,4 +31,9 @@ public class QuestionnaireResultServiceImplements implements IQuestionnaireResul
     public List<QuestionnaireResult> list() {
         return qrR.findAll();
     }
+
+    @Override
+    public List<String[]> ResultadoUsuarioCuestionario() {
+        return qrR.ResultadoUserTemperamento();
+    }
 }

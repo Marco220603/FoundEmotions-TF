@@ -12,9 +12,9 @@ public class QuestionnaireResult {
     @OneToOne
     @JoinColumn(name = "userid")
     private User user;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "questionsid")
-    private List<Questions> questions;
+    private Questions questions;
     @Column(name = "rpta")
     private int rpta;
     @Column(name = "totalscore")
@@ -26,7 +26,7 @@ public class QuestionnaireResult {
     public QuestionnaireResult() {
     }
 
-    public QuestionnaireResult(int id, User user, List<Questions> questions, int rpta, int totalscore, Temper temper) {
+    public QuestionnaireResult(int id, User user, Questions questions, int rpta, int totalscore, Temper temper) {
         this.id = id;
         this.user = user;
         this.questions = questions;
@@ -51,11 +51,11 @@ public class QuestionnaireResult {
         this.user = user;
     }
 
-    public List<Questions> getQuestions() {
+    public Questions getQuestions() {
         return questions;
     }
 
-    public void setQuestions(List<Questions> questions) {
+    public void setQuestions(Questions questions) {
         this.questions = questions;
     }
 
