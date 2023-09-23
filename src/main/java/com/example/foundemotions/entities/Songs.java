@@ -14,19 +14,19 @@ public class Songs {
     @JoinColumn(name = "genderid")
     private Gender gender;
     @ManyToOne
-    @JoinColumn(name = "artitsid")
-    private Artits artits;
+    @JoinColumn(name = "artistid")
+    private Artist artist;
     @Column(name = "localdate")
     private LocalDate localDate;
 
     public Songs() {
     }
 
-    public Songs(int id, String title, Gender gender, Artits artits, LocalDate localDate) {
+    public Songs(int id, String title, Gender gender, Artist artist, LocalDate localDate) {
         this.id = id;
         this.title = title;
         this.gender = gender;
-        this.artits = artits;
+        this.artist = artist;
         this.localDate = localDate;
     }
 
@@ -54,12 +54,12 @@ public class Songs {
         this.gender = gender;
     }
 
-    public Artits getArtits() {
-        return artits;
+    public Artist getArtist() {
+        return artist;
     }
 
-    public void setArtits(Artits artits) {
-        this.artits = artits;
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 
     public LocalDate getLocalDate() {

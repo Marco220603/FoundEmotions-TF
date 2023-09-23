@@ -4,16 +4,16 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Artits")
-public class Artits {
+@Table(name = "Artist")
+public class Artist {
 
        @Id
        @GeneratedValue(strategy = GenerationType.IDENTITY)
 
        private int id;
 
-       @Column(name = "nameArtits",length = 45,nullable = false)
-       private String nameArtits;
+       @Column(name = "nameArtist",length = 45,nullable = false)
+       private String nameArtist;
 
 
        @ManyToOne
@@ -21,14 +21,14 @@ public class Artits {
        private Gender genderid ;
 
 
-       public Artits(int id, String nameArtits, Gender genderid) {
+       public Artist(int id, String nameArtist, Gender genderid) {
               this.id = id;
-              this.nameArtits = nameArtits;
+              this.nameArtist = nameArtist;
               this.genderid = genderid;
        }
 
-       public Artits() {
-              
+       public Artist() {
+
        }
 
        public int getId() {
@@ -39,12 +39,12 @@ public class Artits {
               this.id = id;
        }
 
-       public String getNameArtits() {
-              return nameArtits;
+       public String getNameArtist() {
+              return nameArtist;
        }
 
-       public void setNameArtits(String nameArtits) {
-              this.nameArtits = nameArtits;
+       public void setNameArtist(String nameArtist) {
+              this.nameArtist = nameArtist;
        }
 
        public Gender getGenderid() {
