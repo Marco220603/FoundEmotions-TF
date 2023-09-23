@@ -10,7 +10,7 @@ public interface ISongsService {
 
     public void delete(int idtsongs);
 
-    public Temper listId(int idsongs);
+    public Songs listId(int idsongs);
 
-    List<Temper> list();
+    List<Songs> list();
 }

@@ -10,7 +10,7 @@ public interface IQuestionnaireResultService {
 
     public void delete(int idtquetionnaireresult);
 
-    public Temper listId(int idquestionnaireresult);
+    public QuestionnaireResult listId(int idquestionnaireresult);
 
-    List<Temper> list();
+    List<QuestionnaireResult> list();
 }
