@@ -28,5 +28,5 @@ public class GenderServiceImplement implements IGenderService {
     public void delete(int idGender) {igR.deleteById(idGender);};
 
     @Override
-    public Gender listarId(int idGender){return igR.findById(idGender).orElse(new Gender()) ;}
+    public Gender listId(int idGender){return igR.findById(idGender).orElse(new Gender()) ;}
 }

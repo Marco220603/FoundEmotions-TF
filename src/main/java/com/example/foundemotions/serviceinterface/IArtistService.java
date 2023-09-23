@@ -9,6 +9,6 @@ public interface IArtistService {
     public void insert(Artist artist);
     public List<Artist> list();
     public void delete(int idArtist);
-    public Artist listarId(int idArtist);
+    public Artist listId(int idArtist);
 
 }

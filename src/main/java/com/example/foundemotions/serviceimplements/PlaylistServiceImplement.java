@@ -28,7 +28,7 @@ public class PlaylistServiceImplement implements IPlaylistService {
     }
 
     @Override
-    public Playlist listarId(int idPlaylist) {
+    public Playlist listId(int idPlaylist) {
         return pR.findById(idPlaylist).orElse(new Playlist());
     }
 }

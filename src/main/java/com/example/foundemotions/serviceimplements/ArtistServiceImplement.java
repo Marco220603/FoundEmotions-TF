@@ -27,6 +27,6 @@ public class ArtistServiceImplement implements IArtistService {
     public void delete(int idArtist) { iaR.deleteById(idArtist);};
 
     @Override
-    public Artist listarId(int idArtist){return iaR.findById(idArtist).orElse(new Artist()) ;}
+    public Artist listId(int idArtist){return iaR.findById(idArtist).orElse(new Artist()) ;}
 
 }

@@ -2,6 +2,7 @@ package com.example.foundemotions.controllers;
 
 
 import com.example.foundemotions.dtos.ArtistDTO;
+import com.example.foundemotions.dtos.GenderDTO;
 import com.example.foundemotions.entities.Artist;
 import com.example.foundemotions.serviceinterface.IArtistService;
 import org.modelmapper.ModelMapper;
@@ -41,5 +42,9 @@ public class ArtistController {
             return m.map(x,ArtistDTO.class);
         }).collect(Collectors.toList());
     }
-
+    public ArtistDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        ArtistDTO dto=m.map(aS.listId(id),ArtistDTO.class);
+        return dto;
+    }
 }

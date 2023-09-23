@@ -2,6 +2,7 @@ package com.example.foundemotions.controllers;
 
 
 import com.example.foundemotions.dtos.GenderDTO;
+import com.example.foundemotions.dtos.PlaylistDTO;
 import com.example.foundemotions.entities.Gender;
 import com.example.foundemotions.serviceinterface.IGenderService;
 import org.modelmapper.ModelMapper;
@@ -42,7 +43,12 @@ public class GenderController {
         }).collect(Collectors.toList());
     }
 
-
+    @GetMapping("/{id}")
+    public GenderDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        GenderDTO dto=m.map(gS.listId(id),GenderDTO.class);
+        return dto;
+    }
 
 
 

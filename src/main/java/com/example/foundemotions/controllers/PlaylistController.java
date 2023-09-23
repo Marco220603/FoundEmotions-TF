@@ -1,6 +1,7 @@
 package com.example.foundemotions.controllers;
 
 import com.example.foundemotions.dtos.PlaylistDTO;
+import com.example.foundemotions.dtos.SongsDTO;
 import com.example.foundemotions.entities.Playlist;
 import com.example.foundemotions.serviceinterface.IPlaylistService;
 import org.modelmapper.ModelMapper;
@@ -34,6 +35,15 @@ public class PlaylistController {
     }
     @DeleteMapping
     private void delete(@PathVariable("id") Integer id){pS.delete(id);}
+
+
+    @GetMapping("/{id}")
+    public PlaylistDTO listId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        PlaylistDTO dto=m.map(pS.listId(id),PlaylistDTO.class);
+        return dto;
+    }
+
 
     @GetMapping
     public List<PlaylistDTO> list(){

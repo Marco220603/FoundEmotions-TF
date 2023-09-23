@@ -8,5 +8,5 @@ public interface IPlaylistService {
     public void insert(Playlist playlist);
     public List<Playlist> list();
     public void delete(int idPlaylist);
-    public Playlist listarId(int idPlaylist);
+    public Playlist listId(int idPlaylist);
 }
