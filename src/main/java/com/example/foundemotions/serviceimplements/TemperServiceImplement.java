@@ -24,11 +24,11 @@ public class TemperServiceImplement implements ITemperService {
 
     @Override
     public Temper listId(int idtemper) {
-        return null;
+        return tR.findById(idtemper).orElse(new Temper());
     }
 
     @Override
     public List<Temper> list() {
-        return null;
+        return tR.findAll();
     }
 }
