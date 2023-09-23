@@ -10,7 +10,7 @@ public interface IQuestionsService {
 
     public void delete(int idquestions);
 
-    public Temper listId(int idquestions);
+    public Questions listId(int idquestions);
 
-    List<Temper> list();
+    List<Questions> list();
 }
