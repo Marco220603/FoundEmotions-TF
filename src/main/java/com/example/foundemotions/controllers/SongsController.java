@@ -32,7 +32,7 @@ public class SongsController {
         sS.insert(t);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){sS.delete(id);}
 
     @GetMapping

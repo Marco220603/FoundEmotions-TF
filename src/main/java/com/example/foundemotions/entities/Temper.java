@@ -13,13 +13,13 @@ public class Temper {
     private String name;
     @Column(name = "description",length = 250,nullable = false)
     private String description;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "genderid")
-    private List<Gender> genderid;
+    private Gender genderid;
     public Temper() {
     }
 
-    public Temper(int id, String name, String description, List<Gender> genderid) {
+    public Temper(int id, String name, String description, Gender genderid) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -50,11 +50,11 @@ public class Temper {
         this.description = description;
     }
 
-    public List<Gender> getGenderid() {
+    public Gender getGenderid() {
         return genderid;
     }
 
-    public void setGenderid(List<Gender> genderid) {
+    public void setGenderid(Gender genderid) {
         this.genderid = genderid;
     }
 }

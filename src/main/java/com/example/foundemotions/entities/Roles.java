@@ -13,7 +13,7 @@ public class Roles implements Serializable {
     private Long id;
     private String rol;
     @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(name="userid", nullable=false)
     private User user;
 
     public Long getId() {

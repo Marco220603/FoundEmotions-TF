@@ -33,7 +33,7 @@ public class PlaylistController {
         Playlist t = m.map(dto,Playlist.class);
         pS.insert(t);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){pS.delete(id);}
 
 

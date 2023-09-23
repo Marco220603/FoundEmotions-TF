@@ -11,16 +11,15 @@ public class Gender{
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private int id ;
 
-    @Column(name="nameGender",length = 40, nullable = false)
-    private String nameGender;
-
-    public Gender(int id, String nameGender) {
-        this.id = id;
-        this.nameGender = nameGender;
-    }
+    @Column(name="name",length = 40, nullable = false)
+    private String name;
 
     public Gender() {
+    }
 
+    public Gender(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {
@@ -31,11 +30,11 @@ public class Gender{
         this.id = id;
     }
 
-    public String getNameGender() {
-        return nameGender;
+    public String getName() {
+        return name;
     }
 
-    public void setNameGender(String nameGender) {
-        this.nameGender = nameGender;
+    public void setName(String name) {
+        this.name = name;
     }
 }

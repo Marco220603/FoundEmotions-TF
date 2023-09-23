@@ -32,7 +32,7 @@ public class GenderController {
         Gender t = m.map(dto,Gender.class);
         gS.insert(t);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){gS.delete(id);}
 
     @GetMapping

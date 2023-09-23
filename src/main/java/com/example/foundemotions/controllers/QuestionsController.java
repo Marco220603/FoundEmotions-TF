@@ -32,7 +32,7 @@ public class QuestionsController {
         qS.insert(t);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){qS.delete(id);}
 
     @GetMapping

@@ -28,7 +28,7 @@ public class TemperController {
         Temper t = m.map(dto,Temper.class);
         tS.insert(t);
     }
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     private void delete(@PathVariable("id") Integer id){tS.delete(id);}
 
     @GetMapping

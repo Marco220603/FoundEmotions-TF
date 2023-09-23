@@ -12,30 +12,29 @@ public class Playlist {
     private int id;
 
     @Column(name = "name",length = 35,nullable = false)
-    private String namePlaylist;
+    private String name;
 
     @Column(name = "description",length = 50)
     private String description ;
 
 
     @ManyToOne
-    @JoinColumn(name="user_id",referencedColumnName = "user_id")
-    private User iduser;
+    @JoinColumn(name="userid")
+    private User user;
 
     @ManyToOne
-    @JoinColumn(name="id_songs",referencedColumnName = "id_songs")
+    @JoinColumn(name="idsongs")
     private Songs idsongs;
 
-    public Playlist(int id, String namePlaylist, String description, User iduser, Songs idsongs) {
-        this.id = id;
-        this.namePlaylist = namePlaylist;
-        this.description = description;
-        this.iduser = iduser;
-        this.idsongs = idsongs;
+    public Playlist() {
     }
 
-    public Playlist() {
-
+    public Playlist(int id, String name, String description, User iduser, Songs idsongs) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.user = iduser;
+        this.idsongs = idsongs;
     }
 
     public int getId() {
@@ -46,12 +45,12 @@ public class Playlist {
         this.id = id;
     }
 
-    public String getNamePlaylist() {
-        return namePlaylist;
+    public String getName() {
+        return name;
     }
 
-    public void setNamePlaylist(String namePlaylist) {
-        this.namePlaylist = namePlaylist;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -63,11 +62,11 @@ public class Playlist {
     }
 
     public User getIduser() {
-        return iduser;
+        return user;
     }
 
     public void setIduser(User iduser) {
-        this.iduser = iduser;
+        this.user = iduser;
     }
 
     public Songs getIdsongs() {

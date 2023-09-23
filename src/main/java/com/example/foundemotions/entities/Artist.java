@@ -12,23 +12,22 @@ public class Artist {
 
        private int id;
 
-       @Column(name = "nameArtist",length = 45,nullable = false)
-       private String nameArtist;
+       @Column(name = "name",length = 45,nullable = false)
+       private String name;
 
 
        @ManyToOne
-       @JoinColumn(name = "genderid",referencedColumnName = "idgender")
-       private Gender genderid ;
+       @JoinColumn(name = "genderid")
+       private Gender gender ;
 
-
-       public Artist(int id, String nameArtist, Gender genderid) {
-              this.id = id;
-              this.nameArtist = nameArtist;
-              this.genderid = genderid;
-       }
 
        public Artist() {
+       }
 
+       public Artist(int id, String name, Gender genderid) {
+              this.id = id;
+              this.name = name;
+              this.gender = genderid;
        }
 
        public int getId() {
@@ -39,19 +38,19 @@ public class Artist {
               this.id = id;
        }
 
-       public String getNameArtist() {
-              return nameArtist;
+       public String getName() {
+              return name;
        }
 
-       public void setNameArtist(String nameArtist) {
-              this.nameArtist = nameArtist;
+       public void setName(String name) {
+              this.name = name;
        }
 
        public Gender getGenderid() {
-              return genderid;
+              return gender;
        }
 
        public void setGenderid(Gender genderid) {
-              this.genderid = genderid;
+              this.gender = genderid;
        }
 }
