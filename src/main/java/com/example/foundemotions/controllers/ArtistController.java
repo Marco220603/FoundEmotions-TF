@@ -47,4 +47,17 @@ public class ArtistController {
         ArtistDTO dto=m.map(aS.listId(id),ArtistDTO.class);
         return dto;
     }
+    @GetMapping("/artistaporgenero")
+    public List<ArtistasPorGeneroDTO> ArtistaPorGeneroaUser(){
+        List<String[]>artistaporgenero = aS.ArtistasPorGenero();
+        List<ArtistasPorGeneroDTO> ArtistasPorGeneroDTOS = new ArrayList<>();
+        for (String[] data: artistaporgenero ){
+            ArtistasPorGeneroDTO dto=new ArtistasPorGeneroDTO();
+            dto.setArtistaname(data[0]);
+            dto.setGeneroname(data[1]);
+            ArtistasPorGeneroDTOS.add(dto);
+        }
+        return ArtistasPorGeneroDTOS;
+
+    }
 }
