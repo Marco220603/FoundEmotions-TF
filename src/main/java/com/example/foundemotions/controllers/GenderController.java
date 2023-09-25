@@ -51,7 +51,20 @@ public class GenderController {
         GenderDTO dto=m.map(gS.listId(id),GenderDTO.class);
         return dto;
     }
-
+    
+public List<findGenderWithMostArtistsDTO> findGenderWithMostArtist()
+    {
+        List<String[]>findGenderWithMostArtist = gS.findGenderWithMostArtists();
+        List<findGenderWithMostArtistsDTO> findGenderWithMostArtistsDTOS = new ArrayList<>();
+        for (String[] data: findGenderWithMostArtist)
+        {
+            findGenderWithMostArtistsDTO dto = new findGenderWithMostArtistsDTO();
+            dto.setGenero(data[0]);
+            dto.getCantidad_canciones();
+            findGenderWithMostArtistsDTOS.add(dto);
+        }
+        return findGenderWithMostArtistsDTOS;
+    }
 
 
 
