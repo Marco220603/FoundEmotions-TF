@@ -62,7 +62,7 @@ public class GenderController {
         {
             findGenderWithMostArtistsDTO dto = new findGenderWithMostArtistsDTO();
             dto.setGenero(data[0]);
-            dto.getCantidad_canciones(data[1]);
+            dto.setCantidad_canciones(data[1]);
             findGenderWithMostArtistsDTOS.add(dto);
         }
         return findGenderWithMostArtistsDTOS;
