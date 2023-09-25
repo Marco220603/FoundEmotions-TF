@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IArtistRepository extends JpaRepository<Artist,Integer> {
-
+  @Query(value = "SELECT artist.name,gender.name FROM artist\n" +
+            "LEFT JOIN gender ON artist.genderid=gender.id;",nativeQuery = true)
+    public List<String[]>ArtistasPorGenero();
 
 }
