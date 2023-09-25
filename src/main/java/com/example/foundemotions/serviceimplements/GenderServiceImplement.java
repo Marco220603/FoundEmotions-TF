@@ -29,4 +29,9 @@ public class GenderServiceImplement implements IGenderService {
 
     @Override
     public Gender listId(int idGender){return igR.findById(idGender).orElse(new Gender()) ;}
+    @Override
+    public List<String[]> findGenderWithMostArtists()
+    {
+        return igR.findGenderWithMostArtists();
+    }
 }
