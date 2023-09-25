@@ -29,4 +29,9 @@ public class ArtistServiceImplement implements IArtistService {
     @Override
     public Artist listId(int idArtist){return iaR.findById(idArtist).orElse(new Artist()) ;}
 
+    @Override
+    public List<String[]> ArtistasPorGenero() {
+        return iaR.ArtistasPorGenero();
+    }
+
 }
