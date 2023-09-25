@@ -42,9 +42,12 @@ public class ArtistController {
             return m.map(x,ArtistDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/{id}")
     public ArtistDTO listId(@PathVariable("id") Integer id) {
         ModelMapper m=new ModelMapper();
         ArtistDTO dto=m.map(aS.listId(id),ArtistDTO.class);
         return dto;
     }
+
+
 }

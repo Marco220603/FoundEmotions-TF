@@ -10,5 +10,6 @@ public interface IArtistService {
     public List<Artist> list();
     public void delete(int idArtist);
     public Artist listId(int idArtist);
+    public List<String[]> ArtistasPorGenero();
 
 }

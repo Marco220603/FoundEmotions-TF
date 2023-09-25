@@ -2,6 +2,7 @@ package com.example.foundemotions.controllers;
 
 
 import com.example.foundemotions.dtos.GenderDTO;
+import com.example.foundemotions.dtos.findGenderWithMostArtistsDTO;
 import com.example.foundemotions.entities.Gender;
 import com.example.foundemotions.serviceinterface.IGenderService;
 import org.modelmapper.ModelMapper;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,8 +53,8 @@ public class GenderController {
         GenderDTO dto=m.map(gS.listId(id),GenderDTO.class);
         return dto;
     }
-    
-public List<findGenderWithMostArtistsDTO> findGenderWithMostArtist()
+    @GetMapping("/generoconMasartistas")
+    public List<findGenderWithMostArtistsDTO> findGenderWithMostArtist()
     {
         List<String[]>findGenderWithMostArtist = gS.findGenderWithMostArtists();
         List<findGenderWithMostArtistsDTO> findGenderWithMostArtistsDTOS = new ArrayList<>();
@@ -60,7 +62,7 @@ public List<findGenderWithMostArtistsDTO> findGenderWithMostArtist()
         {
             findGenderWithMostArtistsDTO dto = new findGenderWithMostArtistsDTO();
             dto.setGenero(data[0]);
-            dto.getCantidad_canciones();
+            dto.getCantidad_canciones(data[1]);
             findGenderWithMostArtistsDTOS.add(dto);
         }
         return findGenderWithMostArtistsDTOS;
