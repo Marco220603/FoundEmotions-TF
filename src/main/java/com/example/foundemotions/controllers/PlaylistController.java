@@ -63,7 +63,7 @@ public class PlaylistController {
             totalSongsSavebyUserDTO dto = new totalSongsSavebyUserDTO();
             dto.setName(data[0]);
             dto.setTotalcanciones(Integer.parseInt(data[1]));
-            dto.setTotalcuestionario(Integer.parseInt(data[1]));
+            dto.setTotalcuestionario(Integer.parseInt(data[2]));
             totalSongsSavebyUserDTOS.add(dto);
         }
 
