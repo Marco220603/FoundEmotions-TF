@@ -10,4 +10,5 @@ public interface IGenderService {
     public List<Gender> list();
     public void delete(int idGender);
     public Gender listId(int idGender);
+    public List<String[]> findGenderWithMostArtists();
 }
